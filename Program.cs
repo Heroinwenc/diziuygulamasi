@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,10 +74,12 @@ namespace dizi_uygulama
             }
             //Array.Sort(a) ile de küçükten büyüğe doğru sıralayabiliriz
 
+            
             bool bulundu = false;
             Console.WriteLine("Ara..");
             int aranan= Convert.ToInt32( Console.ReadLine());
-            for (int k = 0; k < 10; k++)
+            //Dizi içerisinde arama yapma 1.Yöntem
+            /*for (int k = 0; k < 10; k++)
             {
                 if (a[k] ==aranan)
                 {
@@ -96,8 +98,17 @@ namespace dizi_uygulama
             else
             {
                 MessageBox.Show("Aranan Değer Bulunamadı!");
-            }
+            }*/
 
+            //Dizi içerisinde arama yapma 2.Yöntem
+            if(a.Contains(aranan) == true)
+            {
+                MessageBox.Show("Aranan Değer Bulundu!");
+            }
+            else
+            {
+                MessageBox.Show("Aranan Değer Bulunamadı!");
+            }
             Console.ReadLine();
         }
     }
