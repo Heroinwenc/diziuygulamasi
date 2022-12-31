@@ -74,10 +74,10 @@ namespace dizi_uygulama
             }
             //Array.Sort(a) ile de küçükten büyüğe doğru sıralayabiliriz
 
-            
+
             bool bulundu = false;
             Console.WriteLine("Ara..");
-            int aranan= Convert.ToInt32( Console.ReadLine());
+            int aranan = Convert.ToInt32(Console.ReadLine());
             //Dizi içerisinde arama yapma 1.Yöntem
             /*for (int k = 0; k < 10; k++)
             {
