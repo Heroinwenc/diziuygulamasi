@@ -101,13 +101,22 @@ namespace dizi_uygulama
             }*/
 
             //Dizi içerisinde arama yapma 2.Yöntem
-            if(a.Contains(aranan) == true)
+            /*if(a.Contains(aranan) == true)
             {
                 MessageBox.Show("Aranan Değer Bulundu!");
             }
             else
             {
                 MessageBox.Show("Aranan Değer Bulunamadı!");
+            }*/
+            //Dizi içerisinde arama yapma 3. Yöntem (İndexOf)
+            if (Array.IndexOf(a, aranan) == -1)
+            {
+                MessageBox.Show("Aranan Değer Bulunamadı!");
+            }
+            else
+            {
+                MessageBox.Show("Aranan Değer Bulundu!");
             }
             Console.ReadLine();
         }
