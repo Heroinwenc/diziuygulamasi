@@ -29,8 +29,8 @@ namespace dizi_uygulama
             {
                 toplam = toplam + a[i];
             }
-            Console.WriteLine("Dizi içerisindeki sayıların toplamı= " + toplam);
-            Console.WriteLine("Dizi içerisindeki sayıların ortalaması= " + (toplam / 10));
+            Console.WriteLine("Dizi içerisindeki sayıların toplamı. " + toplam);
+            Console.WriteLine("Dizi içerisindeki sayıların ortalaması: " + (toplam / 10));
 
             //Dizideki sayılardan 50'den büyük olanların sayısı            
             int buyuklerin_adeti = 0;
@@ -39,7 +39,7 @@ namespace dizi_uygulama
                 if (a[i] > 50)
                     buyuklerin_adeti++;
             }
-            Console.WriteLine("50'den büyük olanların adeti= " + buyuklerin_adeti);
+            Console.WriteLine("50'den büyük olanların adeti: " + buyuklerin_adeti);
 
             //Dizideki sayılardan en büyüğünü ve en küçüğünü bulma  
             int enb = 0, enk = 0;
@@ -76,7 +76,7 @@ namespace dizi_uygulama
 
 
             bool bulundu = false;
-            Console.WriteLine("Ara..");
+            Console.WriteLine("Aranacak sayıyı giriniz..");
             int aranan = Convert.ToInt32(Console.ReadLine());
             //Dizi içerisinde arama yapma 1.Yöntem
             /*for (int k = 0; k < 10; k++)
@@ -93,30 +93,67 @@ namespace dizi_uygulama
             }
             if(bulundu=true)
             {
-                MessageBox.Show("Aranan Değer Bulundu!");
+                Console.WriteLine("Aranan Değer Bulundu!");
             }
             else
             {
-                MessageBox.Show("Aranan Değer Bulunamadı!");
+                Console.WriteLine("Aranan Değer Bulunamadı!");
             }*/
 
             //Dizi içerisinde arama yapma 2.Yöntem
             /*if(a.Contains(aranan) == true)
             {
-                MessageBox.Show("Aranan Değer Bulundu!");
+                Console.WriteLine("Aranan Değer Bulundu!");
             }
             else
             {
-                MessageBox.Show("Aranan Değer Bulunamadı!");
+                Console.WriteLine("Aranan Değer Bulunamadı!");
             }*/
             //Dizi içerisinde arama yapma 3. Yöntem (İndexOf)
+            int adet = 0;
             if (Array.IndexOf(a, aranan) == -1)
             {
-                MessageBox.Show("Aranan Değer Bulunamadı!");
+                Console.WriteLine("Aranan Değer Bulunamadı!");
             }
             else
             {
-                MessageBox.Show("Aranan Değer Bulundu!");
+                //Dizi içerisinde aranan değerden kaç adet var
+                for (int i = 0; i < 10; i++)
+                {
+                    if (aranan == a[i])
+                    {
+                        bulundu = true;
+                        adet++;
+                    }
+                }
+                if (bulundu == true)
+                {
+                    Console.WriteLine("Aranan değer mevcut. " + adet + " adet");
+                }
+                //a dizisindeki elemanların Karesini alma
+                Console.WriteLine("Kareleri;");
+                double[] b = new double[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    b[i] = a[i] * a[i];
+                    Console.WriteLine(b[i]);
+                }
+                Console.WriteLine("");
+                Console.WriteLine("Kare Kökleri;");
+                double[] c = new double[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    c[i] = Math.Sqrt(a[i]);
+                    Console.WriteLine(c[i]);
+                }
+                Console.WriteLine("");
+                Console.WriteLine("Toplamı;");
+                double[] d = new double[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    d[i] = b[i] + c[i];
+                    Console.WriteLine(d[i]);
+                }
             }
             Console.ReadLine();
         }
